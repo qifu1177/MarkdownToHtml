@@ -34,7 +34,8 @@ namespace App.Test
 			input.SendKeys(inputText);
 			var button = _driver.FindElement(By.Id("btSenden"));
 			button.Click();
-			wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(160));
+			Thread.Sleep(500);
+			wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(100));
 			var htmlPre = wait.Until((driver) =>
 			{
 				var pre = driver.FindElement(By.Id("outputHtml"));
